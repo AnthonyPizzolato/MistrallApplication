@@ -40,8 +40,8 @@ Ensure the following are installed:
 Install the required packages:
 1. Clone the repository and navigate to the project folder:
    ```bash
-   git clone https://github.com/your-username/mistral-chatbot.git(https://github.com/AnthonyPizzolato/MistrallApplication.git)
-   cd mistral-chatbot
+   git clone [https://github.com/AnthonyPizzolato/MistrallApplication.git](https://github.com/AnthonyPizzolato/MistrallApplication.git)
+   cd MistrallApplication
    ```
 
 2. Install the dependencies:

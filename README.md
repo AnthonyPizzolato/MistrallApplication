@@ -56,23 +56,7 @@ Make sure you have created and have an access token if not create one here: http
    ```bash
    huggingface-cli login
    ```
-
----
-
-## Setup
-Configure your environment to run the application smoothly.
-
-1. **Environment Variables**  
-   Create a `.env` file in the project root directory and add any required environment variables, such as API keys or tokens for accessing the Hugging Face Hub. For example:
-   ```plaintext
-   HUGGINGFACE_TOKEN=your_token_here
-   ```
-
-2. **Model Download**  
-   Ensure you have access to the model in Hugging Face, which you can specify in your configuration file (e.g., `config.json` or `.env`).
-
-3. **Configuration Files**  
-   Adjust any configurations in `config.json` to fit your desired parameters (e.g., chunk size, maximum token count).
+   It will prompt you to "add token as git credential". Input "Yes"
 
 ---
 
@@ -86,10 +70,6 @@ To use the MISTRAL Chatbot Application, follow these steps.
    python mistral.py 
    ```
 
-
-### Options and Arguments
-- `--chunk_size`: Define the size of text chunks for tokenization (default is optimal for LLM processing).
-- `--output`: Set the output file or directory for saving generated content.
 
 ### Example Commands
 Generate a study guide:

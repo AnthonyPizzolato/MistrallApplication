@@ -52,6 +52,7 @@ Install the required packages:
    ```
 
 3. Log in to Hugging Face Hub:
+Make sure you have created and have an access token if not create one here: https://huggingface.co/docs/hub/en/security-tokens 
    ```bash
    huggingface-cli login
    ```
@@ -82,11 +83,9 @@ To use the MISTRAL Chatbot Application, follow these steps.
 1. Place your **PDF** or **DOCX** file in the root directory of the project.
 2. Run the main application script to start processing:
    ```bash
-   python main.py --file your_document.pdf --mode study_guide
+   python mistral.py 
    ```
-   Options:
-   - `--file`: Specify the document you want to process (PDF or DOCX format).
-   - `--mode`: Choose `"study_guide"` for just a study guide or `"full"` for a study guide with practice questions.
+
 
 ### Options and Arguments
 - `--chunk_size`: Define the size of text chunks for tokenization (default is optimal for LLM processing).
@@ -95,12 +94,7 @@ To use the MISTRAL Chatbot Application, follow these steps.
 ### Example Commands
 Generate a study guide:
 ```bash
-python main.py --file document.pdf --mode study_guide
-```
-
-Generate a study guide with practice questions:
-```bash
-python main.py --file document.docx --mode full
+python main.py
 ```
 
 ---

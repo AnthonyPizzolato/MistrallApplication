@@ -2,7 +2,11 @@ import PyPDF2
 from docx import Document
 from vllm import LLM, SamplingParams
 import torch
-#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
+
+
+	
+
+#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\
 
 # Load the Vllm model
 
@@ -12,16 +16,6 @@ llm =LLM(
     )  # Replace with your model name
 
 
-# Function to extract text from PDF
-def extract_text_from_pdf(file_path):
-    text = ""
-    with open(file_path, 'rb') as file:
-        reader = PyPDF2.PdfReader(file)
-        for page_num in range(len(reader.pages)):
-            text += reader.pages[page_num].extract_text()
-    return text
-
-# Function to extract text from Word documents
 def extract_text_from_docx(file_path):
     doc = Document(file_path)
     text = "\n".join([para.text for para in doc.paragraphs])
@@ -30,7 +24,6 @@ def extract_text_from_docx(file_path):
 # Function to generate a study guide using Vllm
 def generate_study_guide(text, questions=False):
     # Split the document text into smaller chunks
-    print("here")
     chunks = [text[i:i+5000] for i in range(0, len(text), 1500)]
     # Create study guide with summaries
     study_guide = "Study Guide:\n"
@@ -58,19 +51,19 @@ def generate_study_guide(text, questions=False):
 def chatbot():
     print(" Study Guide Chatbot!")
     while True:
-        user_input = input("Please upload your study guide (PDF/DOCX) or type 'exit'   to quit: ").strip()
+        user_input = input("Please upload your study guide (DOCX) or type 'exit'   to quit: ").strip()
 
         if user_input.lower() == 'exit':
             print("Goodbye!")
             break
 
         # Load the document and extract text
-        if user_input.endswith('.pdf'):
-            text = extract_text_from_pdf(user_input)
+        # if user_input.endswith('.pdf'):
+        #     text = extract_text_from_pdf(user_input)
         elif user_input.endswith('.docx'):
             text = extract_text_from_docx(user_input)
         else:
-            print("Unsupported file format. Please upload a PDF or DOCX file.")
+            print("Unsupported file format. Please upload a  DOCX file.")
             continue
 
         # Generate the study guide
